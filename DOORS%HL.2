@@ -1,0 +1,2065 @@
+game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "HL"; Text ="正在加载"; Duration = 2; })
+
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
+
+local Window = OrionLib:MakeWindow({Name = "HL.DOORS", HidePremium = false, SaveConfig = true,IntroText = "DOORS", ConfigFolder = "HL"})
+
+local Tab = Window:MakeTab({
+
+	Name = "通用",
+
+	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})
+
+Tab:AddToggle({
+
+	Name = "穿墙",
+
+	Default = false,
+
+	Callback = function(Value)
+
+		if Value then
+
+		    Noclip = true
+
+		    Stepped = game.RunService.Stepped:Connect(function()
+
+			    if Noclip == true then
+
+				    for a, b in pairs(game.Workspace:GetChildren()) do
+
+                        if b.Name == game.Players.LocalPlayer.Name then
+
+                            for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
+
+                                if v:IsA("BasePart") then
+
+                                    v.CanCollide = false
+
+                                end
+
+                            end
+
+                        end
+
+                    end
+
+			    else
+
+				    Stepped:Disconnect()
+
+			    end
+
+		    end)
+
+	    else
+
+		    Noclip = false
+
+	    end
+
+	end
+
+})
+
+Tab:AddTextbox({
+
+	Name = "移动速度",
+
+	Default = "",
+
+	TextDisappear = true,
+
+	Callback = function(Value)
+
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+
+	end	 
+
+})
+
+Tab:AddTextbox({
+
+	Name = "跳跃高度",
+
+	Default = "",
+
+	TextDisappear = true,
+
+	Callback = function(Value)
+
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+
+	end	 
+
+})
+
+local Tab = Window:MakeTab({
+
+	Name = "主要",
+
+	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})
+
+local Section = Tab:AddSection({
+
+	Name = "玩家"
+
+})
+
+Tab:AddButton({
+
+	Name = "HL DOORS",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/QBRkgX4P"))()
+
+     end
+
+})
+
+Tab:AddButton({
+
+	Name = "全亮",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/4LDKiJ5a"))()
+
+     end
+
+})
+
+local Tab = Window:MakeTab({
+
+	Name = "物品",
+
+	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})
+
+Tab:AddButton({
+
+	Name = "Figuer十字架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/BaconBloxYT/ok/main/Okay"))()
+
+	 end
+
+})
+
+Tab:AddButton({
+
+	Name = "Seek十字架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/RmdComunnityScriptsProvider/AngryHub/main/Seek%20Crucifix.lua"))()
+
+	 end
+
+})
+
+Tab:AddButton({
+
+	Name = "ZEPSYY十字架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/ZepsyyCodesLUA/Utilities/main/Crucifix"))()
+
+	 end
+
+})
+
+Tab:AddButton({
+
+	Name = "耶稣十字架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/cbhlyy/lyycbh/main/shizi2"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "小黑子十字架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/W1AzELhb"))()
+
+     end
+
+})
+
+Tab:AddButton({
+
+	Name = "圣诞节十字架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/PiotrekMineRoblox/Christmas-Crucifix/main/Christmas%20crucifix.lua"))()
+
+     end
+
+})
+
+Tab:AddButton({
+
+	Name = "ClonedBy十字架",
+
+	Callback = function()
+
+        local Chains = game:GetObjects("rbxassetid://11584227521")[1]
+
+	 end
+
+})
+
+Tab:AddButton({
+
+	Name = "Eyes十字架［卡］",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/wshibsiyedehl/chucifix/main/%E7%9C%BC%E7%9D%9B%E5%8D%81%E5%AD%97%E6%9E%B6"))()
+
+     end
+
+})
+
+Tab:AddButton({
+
+	Name = "万圣节十字架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Mye123/MyeWareHub/main/Halloween%20Crucifix"))()
+
+     end
+
+})
+
+Tab:AddButton({
+
+	Name = "乱码十字架",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/PiotrekMineRoblox/Bumble-crucifix/main/Bumble-crucifix"))()
+
+     end
+
+})
+
+local Section = Tab:AddSection({
+
+	Name = "其他物品"
+
+})
+
+Tab:AddButton({
+
+	Name = "剪刀",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/MrNeRD0/Doors-Hack/main/shears_done.lua"))()
+
+	 end
+
+})
+
+Tab:AddButton({
+
+    Name="维他命",
+
+    Callback = function()
+
+        local Vitamins = game:GetObjects("rbxassetid://11685698403")[1]
+
+        local idle = Vitamins.Animations:FindFirstChild("idle")
+
+        local open = Vitamins.Animations:FindFirstChild("open")
+
+        local tweenService = game:GetService("TweenService")
+
+        local sound_open = Vitamins.Handle:FindFirstChild("sound_open")
+
+        local char = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacteAdded:Wait()
+
+        local hum = char:WaitForChild("Humanoid")
+
+        local idleTrack = hum.Animator:LoadAnimation(idle)
+
+        local openTrack = hum.Animator:LoadAnimation(open)
+
+        local Durability = 35
+
+        local InTrans = false
+
+        local Duration = 10
+
+        local xUsed = tonumber(_G.VitaminsDurability)
+
+        local v1 = {};
+
+        function v1.AddDurability()
+
+            InTrans = true
+
+            hum:SetAttribute("SpeedBoost", 15)
+
+            wait(Duration)
+
+            InTrans = false
+
+            hum:SetAttribute("SpeedBoost", 0)
+
+        end
+
+        function v1.SetupVitamins()
+
+            Vitamins.Parent = game.Players.LocalPlayer.Backpack
+
+            Vitamins.Name = "天晴了雨停了你觉得你又行了"
+
+            for slotNum, tool in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+
+                if tool.Name == "天停了雨停了你觉得你又行了" then
+
+                    local slot =game.Players.LocalPlayer.PlayerGui:WaitForChild("MainUI").MainFrame.Hotbar:FindFirstChild(slotNum)
+
+                    -- while task.wait() do
+
+                    --     slot.DurabilityNumber.Text = "x"..xUsed
+
+                    -- end
+
+                    -- slot.DurabilityNumber.Text = "x"..xUsed
+
+                    slot.DurabilityNumber.Visible = true
+
+                    slot.DurabilityNumber.Text = "x"..xUsed
+
+                    Vitamins.Unequipped:Connect(function()
+
+                        slot.DurabilityNumber.Visible = true
+
+                        slot.DurabilityNumber.Text = "x"..xUsed
+
+                    end)
+
+                    Vitamins.Equipped:Connect(function()
+
+                        slot.DurabilityNumber.Visible = true
+
+                    end)
+
+                    Vitamins.Activated:Connect(function()
+
+                        if not InTrans and xUsed > 0 then
+
+                            xUsed = xUsed - 1
+
+                            slot.DurabilityNumber.Visible = true
+
+                            slot.DurabilityNumber.Text = "x"..xUsed
+
+                            openTrack:Play()
+
+                            sound_open:Play()
+
+                    
+
+                            tweenService:Create(workspace.CurrentCamera, TweenInfo.new(0.2), {FieldOfView = 100}):Play()
+
+                            v1.AddDurability()
+
+                        end
+
+                    end)
+
+                end
+
+            end
+
+            Vitamins.Equipped:Connect(function()
+
+                idleTrack:Play()
+
+            end)
+
+            Vitamins.Unequipped:Connect(function()
+
+                idleTrack:Stop()
+
+            end)
+
+        end
+
+        v1.SetupVitamins()
+
+        function v1.AddLoop()
+
+            while task.wait() do
+
+                if InTrans then
+
+                    wait()
+
+                    hum.WalkSpeed = Durability
+
+                else
+
+                    hum.WalkSpeed = 16
+
+                end
+
+            end
+
+        end
+
+        while task.wait() do
+
+            v1.AddLoop()
+
+        end
+
+        return v1
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "手电筒",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/K0t1n/Public/main/Normal%20Flashlight"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "黑喵喵",
+
+	Callback = function()
+
+        local shadow=game:GetObjects("rbxassetid://8069174048")[1]
+
+shadow.Parent = game.Players.LocalPlayer.Backpack
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "圣诞枪",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/NotTypicalAdmin/ChristmasGuns/main/main"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "蜡烛",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "吸铁石",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/K0t1n/Public/main/Laser%20Gun"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "神圣手雷",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/MrNeRD0/Doors-Hack/main/HolyGrenadeByNerd.lua"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "夜视仪",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/DeividComSono/Scripts/main/Scanner.lua"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "激光枪",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/DeividComSono/Scripts/main/Scanner.lua"))()
+
+	end
+
+})
+
+local Tab = Window:MakeTab({
+
+	Name = "娱乐",
+
+	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})
+
+Tab:AddButton({
+
+    Name="复活",
+
+    Callback=function()
+
+        game.ReplicatedStorage.Bricks.Revive:FireServer()
+
+    end
+
+})
+
+Tab:AddButton({
+
+    Name="死亡",
+
+    Callback=function()
+
+        game.Players.LocalPlayer.Character.Humanoid.Health=0
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "感恩节模式",
+
+	Callback = function()
+
+        if thanksgivingEnabled then
+
+            return Rayfield:Notify({
+
+                Title = "Error",
+
+                Content = "You have already ran this",
+
+                Duration = 6.5,
+
+                Image = 4483362458,
+
+                Actions = {},
+
+            })
+
+        end
+
+        thanksgivingEnabled=true
+
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ZepsyyCodesLUA/Utilities/main/DOORSthanksgiving"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+    Name = "MC房间",
+
+    Callback = function()
+
+        loadstring(game:HttpGet("https://pastebin.com/raw/y2WmccLk"))()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "Null模式［请在电梯运行］",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/iCherryKardes/Doors/main/Null%20Mode"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "Floor模式",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/iCherryKardes/Doors/main/Floor%202%20Mod"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "Seek视角",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/Yz2XRC0L"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "Figuer视角",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/10WHWrg4"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "心跳游戏",
+
+	Callback = function()
+
+        firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent)
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "生成红房",
+
+	Callback = function()
+
+        firesignal(game.ReplicatedStorage.Bricks.UseEventModule.OnClientEvent, "tryp", workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")], 9e307)
+
+        -- Imagine someone actually waits 90000000000000000... seconds for the red room to run out, would be crazy 
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "破坏灯",
+
+	Callback = function()
+
+        firesignal(game.ReplicatedStorage.Bricks.UseEventModule.OnClientEvent, "breakLights", workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")], 0.416, 60) 
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "灯闪烁",
+
+	PlaceholderText = "事件【秒】...",
+
+	RemoveTextAfterFocusLost = false,
+
+	Callback = function(Text)
+
+        firesignal(game.ReplicatedStorage.Bricks.UseEventModule.OnClientEvent, "flickerLights", game.Players.LocalPlayer:GetAttribute("CurrentRoom"), tonumber(Text)) 
+
+	end
+
+})
+
+Tab:AddTextbox({
+
+	Name = "设置门的文字",
+
+	PlaceholderText = "阿巴阿巴",
+
+	RemoveTextAfterFocusLost = false,
+
+	Callback = function(Text)
+
+        local r=workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")]
+
+        r.Door.Sign.Stinker.Text=Text
+
+        r.Door.Sign.Stinker.Highlight.Text=Text
+
+        r.Door.Sign.Stinker.Shadow.Text=Text
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "全成就",
+
+	Callback = function()
+
+        for i,v in pairs(require(game.ReplicatedStorage.Achievements)) do
+
+            spawn(function()
+
+                require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.AchievementUnlock)(nil, i)
+
+            end)
+
+        end
+
+	end
+
+})
+
+local Tab = Window:MakeTab({
+
+	Name = "UI与实体",
+
+	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})
+
+local EnabledEntities={
+
+    EnabledScreech=false,
+
+    EnabledHalt=false,
+
+    EnabledGlitch=false,
+
+}
+
+Tab:AddToggle({
+
+    Name = "Screech无伤害",
+
+	CurrentValue = false,
+
+	Flag = "IgnoreScreech",
+
+	Callback = function(Value)
+
+        EnabledEntities.EnabledScreech = Value
+
+	end
+
+})
+
+Tab:AddToggle({
+
+    Name = "Glitch无伤害",
+
+	CurrentValue = false,
+
+	Flag = "IgnoreGlitch",
+
+	Callback = function(Value)
+
+        EnabledEntities.EnabledGlitch = Value
+
+	end
+
+})
+
+Tab:AddToggle({
+
+    Name = "Halt无伤害",
+
+	CurrentValue = false,
+
+	Flag = "IgnoreHalt",
+
+	Callback = function(Value)
+
+        EnabledEntities.EnabledHalt = Value
+
+	end
+
+})
+
+workspace.Camera.ChildAdded:Connect(function(c)
+
+    if c.Name == "Screech" then
+
+        wait(0.1)
+
+        if EnabledEntities.EnabledScreech then
+
+            removeDebris(c, 0)
+
+        end
+
+    end
+
+    if c.Name == "Shade" then
+
+        wait(.1)
+
+        if EnabledEntities.EnabledHalt then
+
+            removeDebris(c, 0)
+
+        end
+
+    end
+
+end)
+
+workspace.CurrentRooms.ChildAdded:Connect(function()
+
+    if EnabledEntities.EnabledGlitch then
+
+        local currentRoom=game.Players.LocalPlayer:GetAttribute("CurrentRoom")
+
+        local roomAmt=#workspace.CurrentRooms:GetChildren()
+
+        local lastRoom=game.ReplicatedStorage.GameData.LatestRoom.Value
+
+    
+
+        if roomAmt>=4 and currentRoom<lastRoom-3 then
+
+            game.Players.LocalPlayer.Character:PivotTo(CFrame.new(lastRoom.RoomStart.Position))
+
+        end    
+
+    end
+
+end)
+
+Tab:AddTextbox({
+
+	Name = "设置金币",
+
+	PlaceholderText = game.Players.LocalPlayer.PlayerGui.PermUI.Topbar.Knobs.Text,
+
+	RemoveTextAfterFocusLost = false,
+
+	Callback = function(Text)
+
+        require(game.ReplicatedStorage.ReplicaDataModule).event.Knobs:Fire(tonumber(Text))
+
+	end
+
+})
+
+Tab:AddTextbox({
+
+	Name = "设置复活",
+
+	PlaceholderText = game.Players.LocalPlayer.PlayerGui.PermUI.Topbar.Revives.Text,
+
+	RemoveTextAfterFocusLost = false,
+
+	Callback = function(Text)
+
+        require(game.ReplicatedStorage.ReplicaDataModule).event.Revives:Fire(tonumber(Text))
+
+	end
+
+})
+
+Tab:AddTextbox({
+
+	Name = "设置加成",
+
+	PlaceholderText = game.Players.LocalPlayer.PlayerGui.PermUI.Topbar.Boosts.Text,
+
+	RemoveTextAfterFocusLost = false,
+
+	Callback = function(Text)
+
+        require(game.ReplicatedStorage.ReplicaDataModule).event.Boosts:Fire(tonumber(Text))
+
+	end
+
+})
+
+local Tab = Window:MakeTab({
+
+	Name = "其他",
+
+	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})
+
+Tab:AddButton({
+
+	Name = "破解图书馆密码",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/EnYgAxLJ"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "删除铁门",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/vvxTt19K"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "删除大门",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/dP99JbgG"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "A-0无锁",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/As9dVnqF"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "无A-90",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/jG81prYM"))()
+
+	end
+
+})
+
+Tab:AddButton({
+
+	Name = "无Seek",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://pastebin.com/raw/S2TrUFxA"))()
+
+	end
+
+})
+
+local Tab = Window:MakeTab({
+
+	Name = "实体生成",
+
+	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})
+
+Tab:AddButton({
+
+    Name = "Rush",
+
+    Callback = function ()
+
+        local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
+
+        -- Create entity
+
+        local entity = Creator.createEntity({
+
+            CustomName = "Rush", -- Custom name of your entity
+
+            Model = "https://github.com/Johnny39871/assets/blob/main/Rush.rbxm?raw=true", -- Can be GitHub file or rbxassetid
+
+            Speed = 100, -- Percentage, 100 = default Rush speed
+
+            DelayTime = 2, -- Time before starting cycles (seconds)
+
+            HeightOffset = 0,
+
+            CanKill = true,
+
+            KillRange = 25,
+
+            BreakLights = true,
+
+            BackwardsMovement = false,
+
+            FlickerLights = {
+
+                true, -- Enabled/Disabled
+
+                1, -- Time (seconds)
+
+            },
+
+            Cycles = {
+
+                Min = 1,
+
+                Max = 1,
+
+                WaitTime = 2,
+
+            },
+
+            CamShake = {
+
+                true, -- Enabled/Disabled
+
+                {3.5, 20, 0.1, 1}, -- Shake values (don't change if you don't know)
+
+                100, -- Shake start distance (from Entity to you)
+
+            },
+
+            Jumpscare = {
+
+                true, -- Enabled/Disabled
+
+                {
+
+                    Image1 = "rbxassetid://10483855823", -- Image1 url
+
+                    Image2 = "rbxassetid://10483999903", -- Image2 url
+
+                    Shake = true,
+
+                    Sound1 = {
+
+                        10483790459, -- SoundId
+
+                        { Volume = 0.5 }, -- Sound properties
+
+                    },
+
+                    Sound2 = {
+
+                        10483837590, -- SoundId
+
+                        { Volume = 0.5 }, -- Sound properties
+
+                    },
+
+                    Flashing = {
+
+                        true, -- Enabled/Disabled
+
+                        Color3.fromRGB(0, 0, 255), -- Color
+
+                    },
+
+                    Tease = {
+
+                        true, -- Enabled/Disabled
+
+                        Min = 4,
+
+                        Max = 4,
+
+                    },
+
+                },
+
+            },
+
+            CustomDialog = {"你死于Rush"}, -- Custom death message
+
+        })
+
+        
+
+        -----[[ Advanced ]]-----
+
+        entity.Debug.OnEntitySpawned = function(entityTable)
+
+            print("Entity has spawned:", entityTable.Model)
+
+        end
+
+        
+
+        entity.Debug.OnEntityDespawned = function(entityTable)
+
+            print("Entity has despawned:", entityTable.Model)
+
+        end
+
+        
+
+        entity.Debug.OnEntityStartMoving = function(entityTable)
+
+            print("Entity has started moving:", entityTable.Model)
+
+        end
+
+        
+
+        entity.Debug.OnEntityFinishedRebound = function(entityTable)
+
+            print("Entity has finished rebound:", entityTable.Model)
+
+        end
+
+        
+
+        entity.Debug.OnEntityEnteredRoom = function(entityTable, room)
+
+            print("Entity:", entityTable.Model, "has entered room:", room)
+
+        end
+
+        
+
+        entity.Debug.OnLookAtEntity = function(entityTable)
+
+            print("Player has looked at entity:", entityTable.Model)
+
+        end
+
+        
+
+        entity.Debug.OnDeath = function(entityTable)
+
+            warn("Player has died.")
+
+        end
+
+        ------------------------
+
+        
+
+        -- Run the created entity
+
+        Creator.runEntity(entity)
+
+        
+
+    end
+
+})
+
+Tab:AddButton({
+
+    Name = "Ambush",
+
+    Callback = function ()
+
+        local EntitySpawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/dreadmania/Scripts/main/Spawner_V2.lua"))()
+
+        local Configuration = {
+
+            Kill = true,
+
+            Speed = 160, 
+
+            Time = 3
+
+        }
+
+        
+
+        EntitySpawner:Spawn("Ambush", Configuration)
+
+    end
+
+})
+
+Tab:AddButton({
+
+    Name = "Screech",
+
+    Callback = function ()
+
+        require(game.StarterGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game),
+
+    workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")])
+
+    
+
+    end
+
+})
+
+Tab:AddButton({
+
+    Name = "Halt",
+
+    Callback = function ()
+
+        local Data = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game)
+
+        require(game.ReplicatedStorage.ClientModules.EntityModules.Shade).stuff(Data, workspace.CurrentRooms[tostring(game.ReplicatedStorage.GameData.LatestRoom.Value)])
+
+    
+
+    end
+
+})
+
+Tab:AddButton({
+
+    Name = "Glitch",
+
+    Callback = function ()
+
+        local Data = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game)
+
+        require(game.ReplicatedStorage.ClientModules.EntityModules.Glitch).stuff(Data, workspace.CurrentRooms[tostring(game.ReplicatedStorage.GameData.LatestRoom.Value)])
+
+    
+
+    end
+
+})
+
+Tab:AddButton({
+
+    Name = "Eyes",
+
+    Callback = function ()
+
+        local enableDamage = true
+
+        repenttimes = 0
+
+        local deadeyescrucifix = false
+
+        local repentcomplete = false
+
+        local currentLoadedRoom = workspace.CurrentRooms[game:GetService("ReplicatedStorage").GameData.LatestRoom.Value]
+
+        local eyes = game:GetObjects("rbxassetid://11488518082")[1]
+
+        local num = math.floor(#currentLoadedRoom.Nodes:GetChildren() / 2)
+
+        eyes.CFrame = (num == 0 and currentLoadedRoom.Base or currentLoadedRoom.Nodes[num]).CFrame + Vector3.new(0, 7, 0)
+
+        
+
+        eyes.Parent = workspace
+
+        eyes.Initiate:Play()
+
+        task.wait(0.5)
+
+        eyes.Attachment.Eyes.Enabled = true
+
+        eyes.whisper:Play()
+
+        eyes.whisper.Looped = true
+
+        function EyesHell()
+
+        local CameraShaker = require(game.ReplicatedStorage.CameraShaker)
+
+        local CameraShaker = require(game.ReplicatedStorage.CameraShaker)
+
+        local camara = game.Workspace.CurrentCamera
+
+        local camShake = CameraShaker.new(Enum.RenderPriority.Camera.Value, function(shakeCf)
+
+        camara.CFrame = camara.CFrame * shakeCf
+
+        end)
+
+        camShake:Start()
+
+        camShake:ShakeOnce(10,30,0.7,0.1)
+
+        ts = game:GetService("TweenService")
+
+        wait(0.2)
+
+        local CameraShaker = require(game.ReplicatedStorage.CameraShaker)
+
+        local CameraShaker = require(game.ReplicatedStorage.CameraShaker)
+
+        local camara = game.Workspace.CurrentCamera
+
+        local camShake = CameraShaker.new(Enum.RenderPriority.Camera.Value, function(shakeCf)
+
+        camara.CFrame = camara.CFrame * shakeCf
+
+        end)
+
+        camShake:Start()
+
+        camShake:ShakeOnce(2,30,5,2)
+
+        wait(3)
+
+        
+
+        eyes.Scream:Play()
+
+        ts:Create(eyes,TweenInfo.new(5),{CFrame = eyes.CFrame - Vector3.new(0,12,0)}):Play()
+
+        wait(7)
+
+        eyes:Destroy()
+
+        end
+
+        local hum = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+
+        
+
+        local function IsVisible(part)
+
+            local vec, found=workspace.CurrentCamera:WorldToViewportPoint(part.Position)
+
+            local onscreen = found and vec.Z > 0
+
+            local cfg = RaycastParams.new();
+
+            cfg.FilterType = Enum.RaycastFilterType.Blacklist
+
+            cfg.FilterDescendantsInstances = {part};
+
+        
+
+            local cast = workspace:Raycast(part.Position, (game.Players.LocalPlayer.Character.UpperTorso.Position - part.Position), cfg);
+
+            return (onscreen and true) and ((cast and cast.Instance).Parent==game.Players.LocalPlayer.Character and true)
+
+        end
+
+        
+
+        while true do
+
+            if workspace.CurrentRooms[game:GetService("ReplicatedStorage").GameData.LatestRoom.Value] ~= currentLoadedRoom then
+
+                enableDamage = false
+
+                task.wait(0.2)
+
+                eyes:Destroy()
+
+            end
+
+            if enableDamage then
+
+                if (IsVisible(eyes)) and not game.Players.LocalPlayer.Character:FindFirstChild("Crucifix") and deadeyescrucifix == false then
+
+                game.Players.LocalPlayer.Character.Humanoid.Health = game.Players.LocalPlayer.Character.Humanoid.Health - 10
+
+                wait(0.2)
+
+                elseif (IsVisible(eyes)) and game.Players.LocalPlayer.Character:FindFirstChild("Crucifix") and repenttimes < 5 and deadeyescrucifix == false then
+
+                print("他很讨厌这个")
+
+                eyes.Repent:Play()
+
+                eyes.Attachment.Angry.Enabled = true
+
+                local CameraShaker = require(game.ReplicatedStorage.CameraShaker)
+
+        local CameraShaker = require(game.ReplicatedStorage.CameraShaker)
+
+        local camara = game.Workspace.CurrentCamera
+
+        local camShake = CameraShaker.new(Enum.RenderPriority.Camera.Value, function(shakeCf)
+
+        camara.CFrame = camara.CFrame * shakeCf
+
+        end)
+
+        camShake:Start()
+
+        
+
+        camShake:ShakeOnce(5,50,0.7,0.2)
+
+                wait(0.7)
+
+                repenttimes = repenttimes + 1
+
+                print(repenttimes)
+
+                eyes.Attachment.Angry.Enabled = false
+
+                wait(0.4)
+
+                elseif game.Players.LocalPlayer.Character:FindFirstChild("Crucifix") and repenttimes == 5 and deadeyescrucifix == false then
+
+                local hi = game.Players.LocalPlayer.Character:FindFirstChild("Crucifix").Handle:Clone()
+
+                hi.Anchored = true
+
+                hi.Parent = workspace
+
+                hi:PivotTo(game.Players.LocalPlayer.Character:FindFirstChild("Crucifix").Handle.CFrame)
+
+                game.Players.LocalPlayer.Character:FindFirstChild("Crucifix"):Destroy()
+
+                EyesHell()
+
+                enableDamage = false
+
+                    if hum.Health <= 0 then
+
+                        game:GetService("ReplicatedStorage").GameStats["Player_" .. game.Players.LocalPlayer.Name].Total.DeathCause.Value =
+
+                            "Eyes"
+
+                        debug.setupvalue(
+
+                            getconnections(game:GetService("ReplicatedStorage").Bricks.DeathHint.OnClientEvent)[1].Function,
+
+                            1,
+
+                            {
+
+                                "你死于 Eyes...",
+
+                                "你应该后悔没拿出十字架.",
+
+                            }
+
+                        )
+
+                    end
+
+                end
+
+            end
+
+            task.wait(0.2)
+
+        end
+
+        
+
+                       
+
+    end
+
+})
+
+Tab:AddButton({
+
+    Name = "Seek",
+
+    Callback = function ()
+
+        local EntitySpawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/dreadmania/Scripts/main/EntitySpawner.lua"))()
+
+        local Configuration = {}
+
+        
+
+        EntitySpawner:Spawn("Seek", unpack(Configuration))    
+
+    end
+
+})
+
+Tab:AddButton({
+
+    Name = "A-60", 
+
+    Callback = function ()
+
+        local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
+
+-- Create entity
+
+local entity = Creator.createEntity({
+
+    CustomName = "A-60", -- Custom name of your entity
+
+    Model = "https://github.com/plamen6789/CustomDoorsMonsters/blob/main/A-60.rbxm?raw=true", -- Can be GitHub file or rbxassetid
+
+    Speed = 300, -- Percentage, 100 = default Rush speed
+
+    DelayTime = 1, -- Time before starting cycles (seconds)
+
+    HeightOffset = 0,
+
+    CanKill = true,
+
+    KillRange = 50,
+
+    BreakLights = false,
+
+    BackwardsMovement = false,
+
+    FlickerLights = {
+
+        true, -- Enabled/Disabled
+
+        2, -- Time (seconds)
+
+    },
+
+    Cycles = {
+
+        Min = 3,
+
+        Max = 3,
+
+        WaitTime = 5,
+
+    },
+
+    CamShake = {
+
+        true, -- Enabled/Disabled
+
+        {30, 30, 0.1, 1}, -- Shake values (don't change if you don't know)
+
+        50, -- Shake start distance (from Entity to you)
+
+    },
+
+    Jumpscare = {
+
+        false, -- Enabled/Disabled
+
+        {
+
+            Image1 = "rbxassetid://11394048190", -- Image1 url
+
+            Image2 = "rbxassetid://11394048190", -- Image2 url
+
+            Shake = true,
+
+            Sound1 = {
+
+                10483790459, -- SoundId
+
+                { Volume = 0.5 }, -- Sound properties
+
+            },
+
+            Sound2 = {
+
+                10483837590, -- SoundId
+
+                { Volume = 0.5 }, -- Sound properties
+
+            },
+
+            Flashing = {
+
+                true, -- Enabled/Disabled
+
+                Color3.fromRGB(255, 0, 0), -- Color
+
+            },
+
+            Tease = {
+
+                false, -- Enabled/Disabled
+
+                Min = 1,
+
+                Max = 1,
+
+            },
+
+        },
+
+    },
+
+    CustomDialog = {"你死于a-60"}, -- Custom death message
+
+})
+
+-----[[ Advanced ]]-----
+
+entity.Debug.OnEntitySpawned = function(entityTable)
+
+    print("实体已生成:", entityTable.Model)
+
+end
+
+entity.Debug.OnEntityDespawned = function(entityTable)
+
+    print("实体已消失:", entityTable.Model)
+
+end
+
+entity.Debug.OnEntityStartMoving = function(entityTable)
+
+    print("实体开始移动:", entityTable.Model)
+
+end
+
+entity.Debug.OnEntityFinishedRebound = function(entityTable)
+
+    print("实体结束来回:", entityTable.Model)
+
+end
+
+entity.Debug.OnEntityEnteredRoom = function(entityTable, room)
+
+    print("实体:", entityTable.Model, "已进入房间:", room)
+
+end
+
+entity.Debug.OnLookAtEntity = function(entityTable)
+
+    print("玩家已看向实体:", entityTable.Model)
+
+end
+
+entity.Debug.OnDeath = function(entityTable)
+
+    warn("玩家死亡.")
+
+end
+
+------------------------
+
+-- Run the created entity
+
+Creator.runEntity(entity)
+
+    
+
+    
+
+    end
+
+    
+
+    
+
+    
+
+    })
+
+Tab:AddButton({
+
+	Name = "A-120",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/MuhXd/DoorSuff/main/DoorsModes/DoorSpeedRun%20Mode'"))()
+
+	end
+
+})
+
+local Tab = Window:MakeTab({
+
+	Name = "功能",
+
+	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})
+
+Tab:AddToggle({
+
+	Name = "无火",
+
+	Default = false,
+
+    Flag = "NoSeek",
+
+    Save = true
+
+})
+
+Tab:AddToggle({
+
+	Name = "即刻互动",
+
+	Default = false,
+
+    Flag = "InstantToggle",
+
+    Save = true
+
+})
+
+Tab:AddButton({
+
+	Name = "无突脸",
+
+	Callback = function()
+
+        pcall(function()
+
+            game:GetService("ReplicatedStorage").Bricks.Jumpscare:Destroy()
+
+        end)
+
+  	end    
+
+})
+
+Tab:AddToggle({
+
+	Name = "自动躲避Rush/Ambush",
+
+	Default = false,
+
+    Flag = "AvoidRushToggle",
+
+    Save = true
+
+})
+
+Tab:AddToggle({
+
+	Name = "无Screech",
+
+	Default = false,
+
+    Flag = "ScreechToggle",
+
+    Save = true
+
+})
+
+Tab:AddToggle({
+
+	Name = "心跳游戏不输",
+
+	Default = false,
+
+    Flag = "HeartbeatWin",
+
+    Save = true
+
+})
+
+Tab:AddToggle({
+
+	Name = "预测追逐战",
+
+	Default = false,
+
+    Flag = "PredictToggle" ,
+
+    Save = true
+
+})
+
+Tab:AddToggle({
+
+	Name = "房间刷新时通知",
+
+	Default = false,
+
+    Flag = "MobToggle" ,
+
+    Save = true
+
+})
+
+Tab:AddButton({
+
+	Name = "完成断路器盒子",
+
+	Callback = function()
+
+        game:GetService("ReplicatedStorage").Bricks.EBF:FireServer()
+
+  	end    
+
+})
+
+game:GetService("RunService").RenderStepped:Connect(function()
+
+    pcall(function()
+
+        if game.Players.LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0 then
+
+            game.Players.LocalPlayer.Character:TranslateBy(game.Players.LocalPlayer.Character.Humanoid.MoveDirection * TargetWalkspeed/50)
+
+        end
+
+    end)
+
+end)
+
+game:GetService("Workspace").CurrentRooms.DescendantAdded:Connect(function(descendant)
+
+    if OrionLib.Flags["NoSeek"].Value == true and descendant.Name == ("Seek_Arm" or "ChandelierObstruction") then
+
+        task.spawn(function()
+
+            wait()
+
+            descendant:Destroy()
+
+        end)
+
+    end
+
+end)
+
+game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(function(prompt)
+
+    if OrionLib.Flags["InstantToggle"].Value == true then
+
+        fireproximityprompt(prompt)
+
+    end
+
+end)
+
+local old
+
+old = hookmetamethod(game,"__namecall",newcclosure(function(self,...)
+
+    local args = {...}
+
+    local method = getnamecallmethod()
+
+    
+
+    if tostring(self) == 'Screech' and method == "FireServer" and OrionLib.Flags["ScreechToggle"].Value == true then
+
+        args[1] = true
+
+        return old(self,unpack(args))
+
+    end
+
+    if tostring(self) == 'ClutchHeartbeat' and method == "FireServer" and OrionLib.Flags["HeartbeatWin"].Value == true then
+
+        args[2] = true
+
+        return old(self,unpack(args))
+
+    end
+
+    
+
+    return old(self,...)
+
+end))
+
+workspace.CurrentCamera.ChildAdded:Connect(function(child)
+
+    if child.Name == "Screech" and OrionLib.Flags["ScreechToggle"].Value == true then
+
+        child:Destroy()
+
+    end
+
+end)
+
+local NotificationCoroutine = coroutine.create(function()
+
+    LatestRoom.Changed:Connect(function()
+
+        if OrionLib.Flags["PredictToggle"].Value == true then
+
+            local n = ChaseStart.Value - LatestRoom.Value
+
+            if 0 < n and n < 4 then
+
+                OrionLib:MakeNotification({
+
+                    Name = "HL•DOOR",
+
+                    Content = "剩余" .. tostring(n) .. "刷新实体",
+
+                    Time = 5
+
+                })
+
+            end
+
+        end
+
+        if OrionLib.Flags["BookToggle"].Value == true then
+
+            if LatestRoom.Value == 50 then
+
+                coroutine.resume(BookCoroutine)
+
+            end
+
+        end
+
+        if OrionLib.Flags["FigureToggle"].Value == true then
+
+            if LatestRoom.Value == 50 then
+
+                coroutine.resume(EntityCoroutine)
+
+            end
+
+        end
+
+    end)
+
+    workspace.ChildAdded:Connect(function(inst)
+
+        if inst.Name == "RushMoving" and OrionLib.Flags["MobToggle"].Value == true then
+
+            if OrionLib.Flags["AvoidRushToggle"].Value == true then
+
+                OrionLib:MakeNotification({
+
+                    Name = "HL•DOOR",
+
+                    Content = "躲避RUSH中",
+
+                    Time = 5
+
+                })
+
+                local OldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+
+                local con = game:GetService("RunService").Heartbeat:Connect(function()
+
+                    game.Players.LocalPlayer.Character:MoveTo(OldPos + Vector3.new(0,20,0))
+
+                end)
+
+                
+
+                inst.Destroying:Wait()
+
+                con:Disconnect()
+
+                game.Players.LocalPlayer.Character:MoveTo(OldPos)
+
+            else
+
+                OrionLib:MakeNotification({
+
+                    Name = "HL•DOOR",
+
+                    Content = "RUSH已刷新",
+
+                    Time = 5
+
+                })
+
+            end
+
+        elseif inst.Name == "AmbushMoving" and OrionLib.Flags["MobToggle"].Value == true then
+
+            if OrionLib.Flags["AvoidRushToggle"].Value == true then
+
+                OrionLib:MakeNotification({
+
+                    Name = "HL•DOOR",
+
+                    Content = "躲避AMBUSH中",
+
+                    Time = 5
+
+                })
+
+                local OldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+
+                local con = game:GetService("RunService").Heartbeat:Connect(function()
+
+                    game.Players.LocalPlayer.Character:MoveTo(OldPos + Vector3.new(0,20,0))
+
+                end)
+
+                
+
+                inst.Destroying:Wait()
+
+                con:Disconnect()
+
+                
+
+                game.Players.LocalPlayer.Character:MoveTo(OldPos)
+
+            else
+
+                OrionLib:MakeNotification({
+
+                    Name = "HL•DOOR",
+
+                    Content = "AMBUSH已刷新",
+
+                    Time = 5
+
+                })
+
+            end
+
+        end
+
+    end)
+
+end)
